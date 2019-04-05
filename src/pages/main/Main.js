@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Container, Text, Row, Button, LogoImage } from '../../components/StyledComponents'
+import React, {Component} from 'react'
+import {Button, Container, LogoImage, Row, Text} from '../../components/StyledComponents'
 import Logo from '../../resources/logo/logo-red.png';
 
 export default class Main extends Component {
@@ -9,7 +9,7 @@ export default class Main extends Component {
             <Container>
                 <Row>
                     <LogoImage src={Logo} width={250} />
-                    <Button large>Entrar</Button>
+                    <Button onClick={ () => this.props.history.push('/login') } large>Entrar</Button>
                 </Row>
 
                 <Container>

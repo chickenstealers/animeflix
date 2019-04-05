@@ -1,15 +1,32 @@
-import styled, { css } from 'styled-components';
-
-export const MainBackground = styled.img`
-    position: relative,
-    url: url(${props => props.src}),
-    opacity: 0,
-    width:100%
-`
+import styled, {css} from 'styled-components';
 
 export const Container = styled.div`
     padding: 2em;
-`
+    
+    ${props =>
+        props.centered &&
+        css`
+            display: flex;
+            justify-content: center;
+            background-color: teal;
+        `
+    };
+    
+    ${props =>
+        props.table &&
+        css`    
+            display: table;
+            width: 100%;
+        `
+    };
+    
+    ${props =>
+        props.centeredForm &&
+        css`
+           margin: 0 auto; 
+        `
+    };
+`;
 
 export const Row = styled.div`
     display: flex;
@@ -61,7 +78,7 @@ export const Text = styled.div`
             text-align: center;
         `
     };
-`
+`;
 
 export const Button = styled.button`
     background: red;
@@ -82,7 +99,7 @@ export const Button = styled.button`
         css`
             font-size: 1em;
         `};
-`
+`;
 
 export const LogoImage = styled.img`
     url: url(${props => props.src}),
